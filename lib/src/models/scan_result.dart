@@ -12,7 +12,7 @@ class ScanResult {
   /// Source of the scan (e.g., 'barcode_scan', 'manual')
   final String? source;
 
-  ScanResult({
+  const ScanResult({
     required this.data,
     this.type,
     required this.timestamp,
@@ -40,6 +40,35 @@ class ScanResult {
       'source': source,
     };
   }
+
+  /// Returns a copy of this [ScanResult] with the given fields replaced.
+  ScanResult copyWith({
+    String? data,
+    String? type,
+    DateTime? timestamp,
+    String? source,
+  }) {
+    return ScanResult(
+      data: data ?? this.data,
+      type: type ?? this.type,
+      timestamp: timestamp ?? this.timestamp,
+      source: source ?? this.source,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    return other is ScanResult &&
+        other.data == data &&
+        other.type == type &&
+        other.timestamp == timestamp &&
+        other.source == source;
+  }
+
+  @override
+  int get hashCode =>
+      data.hashCode ^ type.hashCode ^ timestamp.hashCode ^ source.hashCode;
 
   @override
   String toString() {

@@ -16,9 +16,13 @@ enum ScannerStatus {
   disabled,
 }
 
-/// Extension to convert string to ScannerStatus
+/// Extension to convert string to [ScannerStatus] and provide helpers
 extension ScannerStatusExtension on ScannerStatus {
-  String get name {
+  /// Human-readable label for this status.
+  ///
+  /// Use this instead of `.name` when you need a display string, as `.name`
+  /// is Dart's built-in enum name getter.
+  String get statusLabel {
     switch (this) {
       case ScannerStatus.uninitialized:
         return 'uninitialized';
@@ -33,6 +37,16 @@ extension ScannerStatusExtension on ScannerStatus {
     }
   }
 
+  /// Returns true if the scanner is actively scanning.
+  bool get isScanning => this == ScannerStatus.scanning;
+
+  /// Returns true if the scanner is ready to accept a scan trigger.
+  bool get isReady => this == ScannerStatus.ready;
+
+  /// Returns true if the scanner has been successfully initialized.
+  bool get isInitialized => this != ScannerStatus.uninitialized;
+
+  /// Parse a [ScannerStatus] from a string value (case-insensitive).
   static ScannerStatus fromString(String status) {
     switch (status.toLowerCase()) {
       case 'ready':

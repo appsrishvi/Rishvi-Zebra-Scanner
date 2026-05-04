@@ -5,7 +5,7 @@
 [![Android](https://img.shields.io/badge/Android-API%2023%2B-green.svg)](https://developer.android.com)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-![Banner](https://raw.githubusercontent.com/appsrishvi/Rishvi-Zebra-Scanner/9491cfc1705ddb2a48ca4c78dc8056241841783c/screenshot/banner.png)
+![Banner](https://raw.githubusercontent.com/appsrishvi/Rishvi-Zebra-Scanner/main/screenshot/banner.png)
 
 A Flutter plugin for **[Zebra Technologies](https://www.zebra.com)** barcode scanner devices.
 Uses the Zebra **DataWedge API** to deliver scan results to your Flutter app via a reactive stream.
@@ -20,11 +20,11 @@ warehouse management and Zebra hardware integrations.
 ## Screenshots
 
 <div style="overflow-x: auto; white-space: nowrap; padding: 8px 0;">
-  <img src="https://raw.githubusercontent.com/appsrishvi/Rishvi-Zebra-Scanner/9491cfc1705ddb2a48ca4c78dc8056241841783c/screenshot/1.png" width="150" style="display:inline-block; margin-right:8px; border-radius:8px;" />
-  <img src="https://raw.githubusercontent.com/appsrishvi/Rishvi-Zebra-Scanner/9491cfc1705ddb2a48ca4c78dc8056241841783c/screenshot/2.png" width="150" style="display:inline-block; margin-right:8px; border-radius:8px;" />
-  <img src="https://raw.githubusercontent.com/appsrishvi/Rishvi-Zebra-Scanner/9491cfc1705ddb2a48ca4c78dc8056241841783c/screenshot/3.png" width="150" style="display:inline-block; margin-right:8px; border-radius:8px;" />
-  <img src="https://raw.githubusercontent.com/appsrishvi/Rishvi-Zebra-Scanner/9491cfc1705ddb2a48ca4c78dc8056241841783c/screenshot/4.png" width="150" style="display:inline-block; margin-right:8px; border-radius:8px;" />
-  <img src="https://raw.githubusercontent.com/appsrishvi/Rishvi-Zebra-Scanner/9491cfc1705ddb2a48ca4c78dc8056241841783c/screenshot/5.png" width="150" style="display:inline-block; border-radius:8px;" />
+  <img src="https://raw.githubusercontent.com/appsrishvi/Rishvi-Zebra-Scanner/main/screenshot/1.png" width="150" style="display:inline-block; margin-right:8px; border-radius:8px;" />
+  <img src="https://raw.githubusercontent.com/appsrishvi/Rishvi-Zebra-Scanner/main/screenshot/2.png" width="150" style="display:inline-block; margin-right:8px; border-radius:8px;" />
+  <img src="https://raw.githubusercontent.com/appsrishvi/Rishvi-Zebra-Scanner/main/screenshot/3.png" width="150" style="display:inline-block; margin-right:8px; border-radius:8px;" />
+  <img src="https://raw.githubusercontent.com/appsrishvi/Rishvi-Zebra-Scanner/main/screenshot/4.png" width="150" style="display:inline-block; margin-right:8px; border-radius:8px;" />
+  <img src="https://raw.githubusercontent.com/appsrishvi/Rishvi-Zebra-Scanner/main/screenshot/5.png" width="150" style="display:inline-block; border-radius:8px;" />
 </div>
 
 ---
@@ -77,7 +77,7 @@ Zebra Device Hardware Trigger / Soft Trigger
 
 ```yaml
 dependencies:
-  rishvi_zebra_scanner: ^1.0.0
+  rishvi_zebra_scanner: ^1.0.1
 ```
 
 Then run:
@@ -259,12 +259,13 @@ class _MyAppState extends State<MyApp> {
 
 ### ScanResult
 
-| Property | Type | Description |
+| Property / Method | Type | Description |
 |---|---|---|
 | `data` | `String` | The decoded barcode value. |
 | `type` | `String?` | Barcode symbology — e.g. `EAN-13`, `QR Code`, `Code 128`. |
 | `timestamp` | `DateTime` | When the scan occurred. |
 | `source` | `String?` | Scan source — e.g. `barcode_scan`. |
+| `copyWith(...)` | `ScanResult` | Returns a copy with the specified fields replaced. |
 
 ### ScannerStatus
 
@@ -275,6 +276,15 @@ class _MyAppState extends State<MyApp> {
 | `scanning` | Scan trigger is active. |
 | `error` | An error occurred — check logcat. |
 | `disabled` | Scanner disabled by DataWedge policy. |
+
+**Extension helpers** (via `ScannerStatusExtension`):
+
+| Property | Type | Description |
+|---|---|---|
+| `statusLabel` | `String` | Human-readable status string (e.g. `"ready"`). |
+| `isReady` | `bool` | `true` when status is `ready`. |
+| `isScanning` | `bool` | `true` when status is `scanning`. |
+| `isInitialized` | `bool` | `true` when status is not `uninitialized`. |
 
 ---
 

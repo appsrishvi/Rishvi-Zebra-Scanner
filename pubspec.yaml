@@ -1,6 +1,6 @@
 name: rishvi_zebra_scanner
 description: A Flutter plugin for Zebra Technologies barcode scanner devices (TC-series, MC-series, EC-series). Uses the DataWedge API to deliver scan results via a reactive stream. Developed by Rishvi for use with Zebra Android hardware.
-version: 1.0.0
+version: 1.0.1
 
 homepage: https://rishvi.co.uk
 repository: https://github.com/appsrishvi/Rishvi-Zebra-Scanner
