@@ -19,7 +19,7 @@ rootProject.allprojects {
 }
 
 android {
-    namespace = "com.zebra_scanner"
+    namespace = "uk.co.rishvi.zebra_scanner"
     compileSdk = 34
 
     defaultConfig {

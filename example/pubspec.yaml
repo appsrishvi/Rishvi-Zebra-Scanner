@@ -1,5 +1,5 @@
-name: zebra_scanner_example
-description: Example app demonstrating Zebra Scanner Plugin usage
+name: rishvi_zebra_scanner_example
+description: Example app demonstrating Rishvi Zebra Scanner Plugin.
 publish_to: 'none'
 
 version: 1.0.0+1
@@ -13,7 +13,7 @@ dependencies:
     sdk: flutter
   
   # Reference the plugin from parent directory
-  zebra_scanner:
+  rishvi_zebra_scanner:
     path: ../
 
 dev_dependencies:

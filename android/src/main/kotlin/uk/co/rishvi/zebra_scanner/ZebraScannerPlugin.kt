@@ -1,4 +1,4 @@
-package com.zebra_scanner
+package uk.co.rishvi.zebra_scanner
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -91,7 +91,7 @@ class ZebraScannerPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
         Log.d(TAG, "Plugin detached from engine")
     }
 
-    // ── ActivityAware — needed to register/unregister receiver with Activity context ──
+    // ── ActivityAware ─────────────────────────────────────────────────────────
 
     override fun onAttachedToActivity(binding: ActivityPluginBinding) {
         context = binding.activity
@@ -152,12 +152,10 @@ class ZebraScannerPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
     private fun initializeDataWedge() {
         val ctx = context ?: throw IllegalStateException("Context is null")
 
-        // 1. Create profile
         ctx.sendBroadcast(Intent(ACTION_DATAWEDGE).apply {
             putExtra("com.symbol.datawedge.api.CREATE_PROFILE", PROFILE_NAME)
         })
 
-        // 2. Configure profile — associate with this app and set intent output
         val appConfig = Bundle().apply {
             putString("PACKAGE_NAME", ctx.packageName)
             putStringArray("ACTIVITY_LIST", arrayOf("*"))
@@ -165,7 +163,7 @@ class ZebraScannerPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
         val intentParams = Bundle().apply {
             putString("intent_output_enabled", "true")
             putString("intent_action", ACTION_SCAN_RESULT)
-            putString("intent_delivery", "2") // broadcast
+            putString("intent_delivery", "2")
         }
         val intentPlugin = Bundle().apply {
             putString("PLUGIN_NAME", "INTENT")
@@ -183,7 +181,6 @@ class ZebraScannerPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
             putExtra("com.symbol.datawedge.api.SET_CONFIG", profileConfig)
         })
 
-        // 3. Register for scanner status notifications
         ctx.sendBroadcast(Intent(ACTION_DATAWEDGE).apply {
             putExtra(
                 "com.symbol.datawedge.api.REGISTER_FOR_NOTIFICATION",

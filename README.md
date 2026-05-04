@@ -1,11 +1,11 @@
-# zebra_scanner
+# rishvi_zebra_scanner
 
-[![pub.dev](https://img.shields.io/pub/v/zebra_scanner.svg)](https://pub.dev/packages/zebra_scanner)
+[![pub.dev](https://img.shields.io/pub/v/rishvi_zebra_scanner.svg)](https://pub.dev/packages/rishvi_zebra_scanner)
 [![Flutter](https://img.shields.io/badge/Flutter-3.0%2B-blue.svg)](https://flutter.dev)
 [![Android](https://img.shields.io/badge/Android-API%2023%2B-green.svg)](https://developer.android.com)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-![Banner](screenshot/banner.png)
+![Banner](https://raw.githubusercontent.com/appsrishvi/Rishvi-Zebra-Scanner/9491cfc1705ddb2a48ca4c78dc8056241841783c/screenshot/banner.png)
 
 A Flutter plugin for **[Zebra Technologies](https://www.zebra.com)** barcode scanner devices.
 Uses the Zebra **DataWedge API** to deliver scan results to your Flutter app via a reactive stream.
@@ -19,9 +19,13 @@ warehouse management and Zebra hardware integrations.
 
 ## Screenshots
 
-| | | | | |
-|:---:|:---:|:---:|:---:|:---:|
-| ![Screen 1](screenshot/1.png) | ![Screen 2](screenshot/2.png) | ![Screen 3](screenshot/3.png) | ![Screen 4](screenshot/4.png) | ![Screen 5](screenshot/5.png) |
+<div style="overflow-x: auto; white-space: nowrap; padding: 8px 0;">
+  <img src="https://raw.githubusercontent.com/appsrishvi/Rishvi-Zebra-Scanner/9491cfc1705ddb2a48ca4c78dc8056241841783c/screenshot/1.png" width="150" style="display:inline-block; margin-right:8px; border-radius:8px;" />
+  <img src="https://raw.githubusercontent.com/appsrishvi/Rishvi-Zebra-Scanner/9491cfc1705ddb2a48ca4c78dc8056241841783c/screenshot/2.png" width="150" style="display:inline-block; margin-right:8px; border-radius:8px;" />
+  <img src="https://raw.githubusercontent.com/appsrishvi/Rishvi-Zebra-Scanner/9491cfc1705ddb2a48ca4c78dc8056241841783c/screenshot/3.png" width="150" style="display:inline-block; margin-right:8px; border-radius:8px;" />
+  <img src="https://raw.githubusercontent.com/appsrishvi/Rishvi-Zebra-Scanner/9491cfc1705ddb2a48ca4c78dc8056241841783c/screenshot/4.png" width="150" style="display:inline-block; margin-right:8px; border-radius:8px;" />
+  <img src="https://raw.githubusercontent.com/appsrishvi/Rishvi-Zebra-Scanner/9491cfc1705ddb2a48ca4c78dc8056241841783c/screenshot/5.png" width="150" style="display:inline-block; border-radius:8px;" />
+</div>
 
 ---
 
@@ -73,7 +77,7 @@ Zebra Device Hardware Trigger / Soft Trigger
 
 ```yaml
 dependencies:
-  zebra_scanner: ^1.0.0
+  rishvi_zebra_scanner: ^1.0.0
 ```
 
 Then run:
@@ -111,7 +115,7 @@ If you see a build error about `android:label`, add `tools:replace="android:labe
 ## Quick Start
 
 ```dart
-import 'package:zebra_scanner/zebra_scanner_plugin.dart';
+import 'package:rishvi_zebra_scanner/zebra_scanner_plugin.dart';
 
 // 1. Initialize once (e.g. in initState)
 await ZebraScanner.initialize();
@@ -139,7 +143,7 @@ ZebraScanner.dispose();
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:zebra_scanner/zebra_scanner_plugin.dart';
+import 'package:rishvi_zebra_scanner/zebra_scanner_plugin.dart';
 
 void main() => runApp(const MyApp());
 

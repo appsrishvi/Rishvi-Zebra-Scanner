@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zebra_scanner/zebra_scanner_plugin.dart';
+import 'package:rishvi_zebra_scanner/zebra_scanner_plugin.dart';
 
 void main() {
   runApp(const ZebraScannerExampleApp());
@@ -317,9 +317,8 @@ class _InventoryScannerExampleState extends State<InventoryScannerExample> {
           _status == ScannerStatus.scanning ? Icons.stop : Icons.play_arrow,
         ),
         label: Text(_status == ScannerStatus.scanning ? 'Stop' : 'Scan'),
-        backgroundColor: _status == ScannerStatus.scanning
-            ? Colors.red
-            : Colors.green,
+        backgroundColor:
+            _status == ScannerStatus.scanning ? Colors.red : Colors.green,
       ),
     );
   }

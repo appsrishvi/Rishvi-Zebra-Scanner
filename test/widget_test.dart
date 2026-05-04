@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:zebra_scanner/zebra_scanner_plugin.dart';
+import 'package:rishvi_zebra_scanner/zebra_scanner_plugin.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
