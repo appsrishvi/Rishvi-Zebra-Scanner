@@ -1,0 +1,24 @@
+name: zebra_scanner_example
+description: Example app demonstrating Zebra Scanner Plugin usage
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # Reference the plugin from parent directory
+  zebra_scanner:
+    path: ../
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
