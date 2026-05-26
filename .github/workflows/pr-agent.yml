@@ -13,7 +13,6 @@ jobs:
       issues: write
       pull-requests: write
       contents: write
-
     steps:
       - name: PR Agent action step
         uses: qodo-ai/pr-agent@v0.2.5
